@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f293d;
+}
+div.animation {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.animation span {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background: #1f293d;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.2)rotate( calc(var(--i) * (360deg / 50)));
+    animation: animate 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+}
+@keyframes animate {
+    0%{
+        background: orange;
+    }
+    25% {
+        background: #e7e5de;
+    }
+}
+.main-container {
+    position: relative;
+    width: 400px;
+}
+.main-container form {
+    width: 100%;
+    padding: 0 10px;
+}
+
+.main-container h2 {
+    font: 2em;
+    color: orange;
+    text-align: center;
+}
+.inputbox {
+    position: relative;
+    margin: 25px 0;
+}
+.inputbox input {
+    width: 100%;
+    height: 50%;
+    background: transparent;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 20px;
+    transition: .5s;
+}
+.inputbox input:focus,
+.inputbox input:focus {
+    border-color: orange;
+}
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #e7e5de;
+    pointer-events: none;
+    transition: .5s ease;
+}
+.inputbox input:focus~label,
+.inputbox input:valid~label {
+    top: 1px;
+    font: .8em;
+    background: #1f293d;
+    padding: 0 6px;
+    color: orange;
+}
+.inputbox i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #666;
+    cursor: pointer;
+    padding-left: 2px;
+    transition: color .1s ease;
+}
+.inputbox i:hover {
+    color: orange;
+}
+#togglePassword {
+    position: absolute;
+    top: 47%;
+    right: 30px;
+    transform: translateY(-50%);
+    color: #666;
+    color: #666;
+}
+.forget-password {
+    margin: -15px 0 10;
+    text-align: center;
+}
+.forget-password a {
+    font-size: .85em;
+    color: #666;
+    text-decoration: none;
+}
+.forget-password a:hover {
+    text-decoration: underline;
+    color: orange;
+}
+.btn {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    font-size: 1.5em;
+    letter-spacing: .1em;
+    color: orange;
+    background: #1f293d;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid orange;
+    border-radius: 30px;
+    padding: 5px 30px;
+    z-index: 1;
+    overflow: hidden;
+    transition: color 1s, box-shadow 1s;
+    box-shadow: orange;
+}
+.btn:hover{
+    transition-delay: 0s, 1s;
+    color: #fff;
+    box-shadow: 
+    0 0 10px orange,
+    0 0 20px orange,
+    0 0 40px orange,
+    0 0 80px orange,
+    0 0 120px orange;
+}
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    height: 100%;
+    width: 0;
+    background: orange;
+    transform: skewX(35deg);
+    z-index: -1;
+    transition: 1s;
+}
+.btn:hover::before {
+    width: 100%;
+
+}
+.social-login {
+    text-align: center;
+    margin-top: 20px;
+}
+.social-login p {
+    margin-bottom: 10px;
+    color: #fff;
+}
+.social-login p:hover {
+    color: orange;
+}
+.social-icon {
+    display: inline-block;
+    margin: 0 5px;
+}
+.social-icon img {
+    width: 20px;
+    height: 20px;
+    transition:  transform .8s;
+}
+.social-icon img:hover {
+    transform: scale(1.4);
+}
+.signup-link {
+margin: 20px 0 10px;
+text-align: center;
+}
+.signup-link a {
+    font-size: 1em;
+    color: orange;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup-link a:hover {
+    text-decoration: underline;
+}
